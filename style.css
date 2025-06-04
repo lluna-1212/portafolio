@@ -1,0 +1,212 @@
+:root {
+    --primary-color: #6A0DAD; /* Morado oscuro */
+    --secondary-color: #FF69B4; /* Rosa brillante */
+    --accent-color: #C71585; /* Rosa medio/oscuro */
+    --light-bg-color: #F3E5F5; /* Lavanda muy claro */
+    --dark-text-color: #4A004A; /* Morado muy oscuro para texto */
+    --light-text-color: #ffffff;
+    --card-bg-color: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+}
+
+body {
+    font-family: 'Oddval', sans-serif;
+    margin: 0;
+    background-color: var(--light-bg-color);
+    color: var(--dark-text-color);
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-text-color);
+    padding: 2em 1em;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+#logo {
+    max-height: 60px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    margin: 0.2em 0;
+    /* font-family: 'Montserrat', sans-serif; */ /* Eliminado para heredar de body */
+    font-size: 2.8em;
+}
+
+header p {
+    font-size: 1.3em;
+    color: var(--light-bg-color); /* Un color claro que contraste con el gradiente */
+    font-weight: 300;
+}
+
+nav {
+    background-color: var(--dark-text-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--light-text-color);
+    padding: 1em 1.8em;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+}
+
+/* Skills Ticker Section */
+.skills-ticker-container {
+    background-color: #000000;
+    padding: 3rem 0; /* Adjusted padding to be vertical only, horizontal padding can make overflow tricky */
+    overflow: hidden;
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+    margin: 0; /* Add some space around the ticker */
+    padding: 10px;
+}
+
+#scroll-text {
+    display: inline-block; /* Allows animation of transform */
+    animation: scroll-left 20s linear infinite; /* Adjust duration as needed */
+}
+
+#scroll-text h6 {
+    display: inline-block;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem; /* Adjusted from h6 default for better visibility */
+    font-weight: normal; /* Establecer peso de fuente normal */
+    margin: 0 2rem; /* Space between items */
+    /* text-transform: uppercase; */ /* Eliminado para mostrar texto original */
+    letter-spacing: 1px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%); /* Scroll by half the width because content is duplicated */
+    }
+}
+
+section {
+    padding: 40px 20px;
+    margin: 30px auto;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 950px;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espacio entre la imagen y el texto */
+}
+
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* Para que la imagen no se distorsione */
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+#about .content {
+    flex: 1;
+}
+
+section h2 {
+    /* font-family: 'Montserrat', sans-serif; */ /* Eliminado para heredar de body */
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 25px; /* Espacio entre tarjetas */
+}
+
+.project {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow); /* Usamos la sombra definida en :root */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Para mejor control del contenido interno si es necesario */
+    flex-direction: column; /* Apila el contenido verticalmente */
+    /* border-left: 5px solid var(--secondary-color); /* Mantenemos el borde izquierdo como acento */
+    /* margin-bottom: 0; /* Eliminamos el margen inferior ya que 'gap' lo maneja */
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.project h3 {
+    color: var(--primary-color);
+    /* font-family: 'Montserrat', sans-serif; */ /* Eliminado para heredar de body */
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+#contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+}
+
+#contact ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+#contact ul li a:hover {
+    color: var(--accent-color);
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 2em 0;
+    background-color: var(--dark-text-color);
+    color: var(--light-bg-color);
+    margin-top: 40px;
+}
