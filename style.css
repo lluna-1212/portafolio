@@ -152,20 +152,24 @@ section h2 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
-    gap: 25px; /* Espacio entre tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
 }
 
 .project {
-    background-color: var(--card-bg-color);
-    border-radius: var(--border-radius);
+    background: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
     padding: 25px;
     box-shadow: var(--shadow); /* Usamos la sombra definida en :root */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex; /* Para mejor control del contenido interno si es necesario */
     flex-direction: column; /* Apila el contenido verticalmente */
     /* border-left: 5px solid var(--secondary-color); /* Mantenemos el borde izquierdo como acento */
-    /* margin-bottom: 0; /* Eliminamos el margen inferior ya que 'gap' lo maneja */
 }
 
 .project:hover {
